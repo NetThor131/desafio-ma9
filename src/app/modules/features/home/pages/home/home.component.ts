@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { Cliente } from '@data/models';
 import { ClientesService } from '@data/services';
 
@@ -13,6 +14,8 @@ export class HomeComponent implements OnInit {
   constructor(private clientesService: ClientesService) {}
 
   ngOnInit(): void {
-    this.clientes = this.clientesService.obterClientes();
+    this.clientesService
+      .obterClientes()
+      .subscribe((clientes) => (this.clientes = clientes));
   }
 }
