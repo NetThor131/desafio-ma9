@@ -1,8 +1,22 @@
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
+
+const routes: Routes = [
+  { path: '', pathMatch: 'full', redirectTo: 'home' },
+  {
+    path: 'home',
+    loadChildren: () =>
+      import('@modules/features/home').then((module) => module.HomeModule),
+  },
+];
 
 @NgModule({
-  imports: [RouterModule],
+  imports: [
+    RouterModule.forRoot(routes, {
+      scrollPositionRestoration: 'enabled',
+      relativeLinkResolution: 'legacy',
+    }),
+  ],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
