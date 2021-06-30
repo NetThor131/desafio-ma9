@@ -7,5 +7,6 @@ import { FooterComponent } from './components/footer';
 @NgModule({
   declarations: [NavbarComponent, FooterComponent],
   imports: [CommonModule],
+  exports: [NavbarComponent, FooterComponent],
 })
 export class UiModule {}
