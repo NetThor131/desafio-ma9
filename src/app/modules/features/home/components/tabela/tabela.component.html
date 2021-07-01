@@ -23,7 +23,11 @@
             <button type="button" class="btn btn-secondary">
               <i class="bi bi-pencil-fill"></i> Editar
             </button>
-            <button type="button" class="btn btn-danger">
+            <button
+              type="button"
+              class="btn btn-danger"
+              (click)="deletarCliente(cliente)"
+            >
               <i class="bi bi-trash-fill"></i> Excluir
             </button>
           </div>

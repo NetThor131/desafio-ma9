@@ -28,4 +28,8 @@ export class ClientesService {
 
     return this.http.post(`${API_URL}/clientes`, body);
   }
+
+  excluirCliente(idCliente: number) {
+    return this.http.delete(`${API_URL}/clientes/${idCliente}`);
+  }
 }
