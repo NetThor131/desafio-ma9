@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 
 import { Cliente } from '@data/models';
 import { ClientesService } from '@data/services';
+import { ToastrService } from 'ngx-toastr';
 import { finalize } from 'rxjs/operators';
 
 @Component({
@@ -15,7 +16,7 @@ export class TabelaComponent implements OnInit {
 
   constructor(
     private clientesService: ClientesService,
-    private router: Router
+    private toast: ToastrService
   ) {}
 
   ngOnInit(): void {
@@ -35,7 +36,7 @@ export class TabelaComponent implements OnInit {
         })
       )
       .subscribe(() => {
-        alert('Cliente excluido!');
+        this.toast.success('Cliente removido com sucesso!');
       });
   }
 }

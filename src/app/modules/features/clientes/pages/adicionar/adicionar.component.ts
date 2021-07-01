@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { finalize } from 'rxjs/operators';
+import { ToastrService } from 'ngx-toastr';
 
 import { ClientesService } from '@data/services';
 
@@ -13,7 +14,8 @@ import { ClientesService } from '@data/services';
 export class AdicionarComponent {
   constructor(
     private clientesService: ClientesService,
-    private router: Router
+    private router: Router,
+    private toast: ToastrService
   ) {}
 
   adicionarCliente(form: NgForm) {
@@ -27,7 +29,7 @@ export class AdicionarComponent {
         })
       )
       .subscribe(() => {
-        alert('Usuário Adicionado');
+        this.toast.success('Cliente inserido com sucesso!');
       });
   }
 }
