@@ -8,6 +8,7 @@ import { AdicionarComponent } from './pages/adicionar';
 import { VisualizarComponent } from './pages/visualizar';
 import { EditarComponent } from './pages/editar';
 import { FormClienteComponent } from './components/form-cliente';
+import { CoreModule } from 'src/app/core';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,12 @@ import { FormClienteComponent } from './components/form-cliente';
     FormClienteComponent,
     EditarComponent,
   ],
-  imports: [CommonModule, ClientesRoutingModule, FormsModule, ToastrModule],
+  imports: [
+    CommonModule,
+    ClientesRoutingModule,
+    FormsModule,
+    ToastrModule,
+    CoreModule,
+  ],
 })
 export class ClientesModule {}
