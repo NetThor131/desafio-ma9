@@ -1,28 +1,32 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { finalize } from 'rxjs/operators';
 import { ToastrService } from 'ngx-toastr';
 
 import { ClientesService } from '@data/services';
+import { Cliente } from '@data/models';
+import { FormClienteComponent } from '../../components/form-cliente';
 
 @Component({
   selector: 'app-adicionar',
   templateUrl: './adicionar.component.html',
   styleUrls: ['./adicionar.component.css'],
 })
-export class AdicionarComponent {
+export class AdicionarComponent implements OnInit {
+  @ViewChild(FormClienteComponent) form: FormClienteComponent;
+
   constructor(
     private clientesService: ClientesService,
     private router: Router,
     private toast: ToastrService
   ) {}
 
-  adicionarCliente(form: NgForm) {
-    const { value } = form;
+  ngOnInit(): void {}
 
+  adicionarCliente(cliente: Cliente) {
     this.clientesService
-      .adicionarCliente(value)
+      .adicionarCliente(cliente)
       .pipe(
         finalize(() => {
           this.router.navigate(['']);
