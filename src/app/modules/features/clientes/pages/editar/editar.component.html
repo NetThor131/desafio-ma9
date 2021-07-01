@@ -1,1 +1,7 @@
-<p>editar works!</p>
+<ng-container *ngIf="cliente$ | async as cliente">
+  <app-form-cliente
+    buttonLabel="Editar"
+    (formSubmit)="editarCliente($event)"
+    [initialValue]="cliente"
+  ></app-form-cliente>
+</ng-container>

@@ -44,4 +44,8 @@ export class TabelaComponent implements OnInit {
   visualizarCliente(cliente: Cliente) {
     this.router.navigate(['clientes', 'visualizar', cliente.id]);
   }
+
+  editarCliente(cliente: Cliente) {
+    this.router.navigate(['clientes', 'editar', cliente.id]);
+  }
 }

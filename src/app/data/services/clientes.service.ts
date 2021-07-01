@@ -36,4 +36,18 @@ export class ClientesService {
   obterUmCliente(idCliente: number): Observable<Cliente> {
     return this.http.get<Cliente>(`${API_URL}/clientes/${idCliente}`);
   }
+
+  editarCliente(cliente: Cliente, id: number) {
+    const body = {
+      cpf: cliente.cpf,
+      nome: cliente.nome,
+      sexo: cliente.sexo,
+      dat_nasc: cliente.dat_nasc,
+      email: cliente.email,
+      phone: cliente.phone,
+      id: cliente.id,
+    };
+
+    return this.http.put(`${API_URL}/clientes/${id}`, body);
+  }
 }
