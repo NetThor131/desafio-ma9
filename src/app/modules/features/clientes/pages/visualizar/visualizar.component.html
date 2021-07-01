@@ -1,1 +1,57 @@
-<p>visualizar works!</p>
+<ng-container *ngIf="cliente$ | async as cliente">
+  <div class="row">
+    <div class="col-md-6 mt-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Identificação</h5>
+          <p>{{ cliente.nome }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 mt-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Sexo</h5>
+          <p>{{ cliente.sexo }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 mt-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Data de Nascimento</h5>
+          <p>{{ cliente.dat_nasc }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 mt-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">CPF</h5>
+          <p>{{ cliente.cpf }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 mt-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Email</h5>
+          <p>{{ cliente.email }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 mt-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Telefone</h5>
+          <p>{{ cliente.phone }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mt-4" style="text-align: end">
+    <button type="button" class="btn btn-primary" routerLink="/">
+      <i class="bi bi-arrow-left"></i> Voltar
+    </button>
+  </div>
+</ng-container>

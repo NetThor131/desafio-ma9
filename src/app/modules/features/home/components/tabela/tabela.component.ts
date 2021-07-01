@@ -16,7 +16,8 @@ export class TabelaComponent implements OnInit {
 
   constructor(
     private clientesService: ClientesService,
-    private toast: ToastrService
+    private toast: ToastrService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -38,5 +39,9 @@ export class TabelaComponent implements OnInit {
       .subscribe(() => {
         this.toast.success('Cliente removido com sucesso!');
       });
+  }
+
+  visualizarCliente(cliente: Cliente) {
+    this.router.navigate(['clientes', 'visualizar', cliente.id]);
   }
 }

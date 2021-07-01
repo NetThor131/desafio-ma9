@@ -6,7 +6,7 @@ import { VisualizarComponent } from './pages/visualizar';
 
 const routes: Routes = [
   { path: 'adicionar', component: AdicionarComponent },
-  { path: 'visualizar', component: VisualizarComponent },
+  { path: 'visualizar/:id', component: VisualizarComponent },
 ];
 
 @NgModule({

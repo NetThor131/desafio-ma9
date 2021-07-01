@@ -32,4 +32,8 @@ export class ClientesService {
   excluirCliente(idCliente: number) {
     return this.http.delete(`${API_URL}/clientes/${idCliente}`);
   }
+
+  obterUmCliente(idCliente: number): Observable<Cliente> {
+    return this.http.get<Cliente>(`${API_URL}/clientes/${idCliente}`);
+  }
 }
