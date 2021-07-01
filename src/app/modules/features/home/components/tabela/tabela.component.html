@@ -14,7 +14,7 @@
         <th scope="row">{{ cliente.id }}</th>
         <td>{{ cliente.nome }}</td>
         <td>{{ cliente.email }}</td>
-        <td>{{ cliente.phone }}</td>
+        <td>{{ cliente.phone | phone }}</td>
         <td>
           <div class="btn-group acoes" role="group" aria-label="Basic example">
             <button
