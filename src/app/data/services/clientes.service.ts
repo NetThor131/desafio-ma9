@@ -15,4 +15,17 @@ export class ClientesService {
   obterClientes(): Observable<Cliente[]> {
     return this.http.get<Cliente[]>(`${API_URL}/clientes`);
   }
+
+  adicionarCliente(cliente: Cliente) {
+    const body = {
+      cpf: cliente.cpf,
+      nome: cliente.nome,
+      sexo: cliente.sexo,
+      dat_nasc: cliente.dat_nasc,
+      email: cliente.email,
+      phone: cliente.phone,
+    };
+
+    return this.http.post(`${API_URL}/clientes`, body);
+  }
 }

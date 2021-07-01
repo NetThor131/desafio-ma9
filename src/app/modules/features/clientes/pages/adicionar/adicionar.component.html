@@ -1,38 +1,56 @@
 <div class="d-flex justify-content-center">
-  <form style="width: 50%">
+  <form style="width: 50%" #form="ngForm" (ngSubmit)="adicionarCliente(form)">
     <div class="row">
       <div class="col-md-6 mt-2">
         <label for="nome" class="form-label">Nome</label>
-        <input type="text" class="form-control" id="nome" />
+        <input type="text" class="form-control" id="nome" name="nome" ngModel />
       </div>
 
       <div class="col-md-6 mt-2">
         <label for="sexo" class="form-label">Seu sexo</label>
-        <select class="form-select" aria-label="Sexo">
-          <option value="Masculino">Masculino</option>
-          <option value="Feminino">Feminino</option>
-          <option value="Não Especificado">Não Especificado</option>
+        <select class="form-select" aria-label="Sexo" name="sexo" ngModel>
+          <option value="M">Masculino</option>
+          <option value="F">Feminino</option>
+          <option value="NE">Não Especificado</option>
         </select>
       </div>
 
       <div class="col-md-6 mt-2">
         <label for="cpf" class="form-label">CPF</label>
-        <input type="text" class="form-control" id="cpf" />
+        <input type="text" class="form-control" id="cpf" name="cpf" ngModel />
       </div>
 
       <div class="col-md-6 mt-2">
         <label for="dat_nasc" class="form-label">Data de Nascimento</label>
-        <input type="text" class="form-control" id="dat_nasc" />
+        <input
+          type="text"
+          class="form-control"
+          id="dat_nasc"
+          name="dat_nasc"
+          ngModel
+        />
       </div>
 
       <div class="col-md-6 mt-2">
         <label for="email" class="form-label">Email</label>
-        <input type="email" class="form-control" id="email" />
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          name="email"
+          ngModel
+        />
       </div>
 
       <div class="col-md-6 mt-2">
         <label for="phone" class="form-label">Telefone</label>
-        <input type="text" class="form-control" id="phone" />
+        <input
+          type="text"
+          class="form-control"
+          id="phone"
+          name="phone"
+          ngModel
+        />
       </div>
     </div>
 
