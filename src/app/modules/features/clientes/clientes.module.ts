@@ -6,9 +6,10 @@ import { ToastrModule } from 'ngx-toastr';
 import { ClientesRoutingModule } from './clientes-routing.module';
 import { AdicionarComponent } from './pages/adicionar';
 import { VisualizarComponent } from './pages/visualizar';
+import { FormClienteComponent } from './components/form-cliente';
 
 @NgModule({
-  declarations: [AdicionarComponent, VisualizarComponent],
+  declarations: [AdicionarComponent, VisualizarComponent, FormClienteComponent],
   imports: [CommonModule, ClientesRoutingModule, FormsModule, ToastrModule],
 })
 export class ClientesModule {}
